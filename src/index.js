@@ -64,7 +64,7 @@ var _initialize = function (gaTrackingID, options) {
 };
 
 var ReactGA = {
-  initialize: function (configs, options) {
+  initialize: function (configs, options, url) {
     if (typeof window === 'undefined') {
       return false;
     }
@@ -80,7 +80,7 @@ var ReactGA = {
       a.async = 1;
       a.src = g;
       m.parentNode.insertBefore(a, m);
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    })(window, document, 'script', url || 'https://www.google-analytics.com/analytics.js', 'ga');
     // jscs:enable
 
     if (Array.isArray(configs)) {
